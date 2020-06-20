@@ -1,0 +1,19 @@
+cmake_minimum_required (VERSION 3.13)
+
+project (PostMartian)
+enable_language(C)
+enable_language(CXX)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+find_packages(Poco REQUIRED COMPONENTS Foundation Util Net XML JSON)
+
+SET(Poco_INCLUDE_DIRS "/usr/include/Poco")
+include_directories(
+	"./src"
+	${Poco_INCLUDE_DIRS}
+)
